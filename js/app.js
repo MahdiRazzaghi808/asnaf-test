@@ -36,16 +36,20 @@ up.addEventListener('click', () => {
 
 
 function updateImage() {
-    const imageElement = document.getElementById('my-image');
+    const imageElement = document.querySelectorAll('#my-image');
     const windowWidth = window.innerWidth;
 
-    if (windowWidth <= 576) {
-        imageElement.src = "./asset/asnaf.mob.jpg";
-        imageElement.alt = "banner";
-    } else {
-        imageElement.src = "./asset/header.jpg";
-        imageElement.alt = "banner";
-    }
+
+    imageElement.forEach(v => {
+        if (windowWidth <= 576) {
+            v.src = "./asset/asnaf.mob.jpg";
+            v.alt = "banner";
+        } else {
+            v.src = "./asset/header.jpg";
+            v.alt = "banner";
+        }
+    })
+
 }
 window.addEventListener('resize', updateImage);
 window.addEventListener('load', updateImage);

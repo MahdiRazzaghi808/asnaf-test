@@ -208,10 +208,10 @@ header {
     z-index: 10;
 }
 
-header img {
+/* header img {
     width: 100%;
     min-height: 90vh;
-}
+} */
 
 .header__text {
     position: absolute;
@@ -672,7 +672,7 @@ footer a {
 
 
 .swiper {
-    width: 100%;
+    width: 100vw;
     height: 90vh;
 }
 
@@ -682,20 +682,10 @@ footer a {
     height: 100%;
 }
 
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .swiper-slide img {
-    display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
 }
 
 
