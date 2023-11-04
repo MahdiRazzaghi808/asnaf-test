@@ -1,0 +1,192 @@
+.container {
+    width: 100%;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    overflow-x: hidden !important;
+
+}
+
+
+
+
+
+@media (max-width:400px) {}
+
+
+@media (min-width: 576px) {
+    .about-us img {
+        width: 50%;
+    }
+
+    header h1 {
+        font-size: 2.85rem;
+    }
+
+    header p {
+        font-size: 1.25rem;
+    }
+
+
+    .courses__wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .accordion {
+        font-size: 1.5rem;
+    }
+
+    .ability__body img {
+        width: 10rem;
+    }
+
+    .ability__body p {
+        color: #010101;
+        font-weight: bold;
+        font-size: 1.75rem;
+    }
+
+    .footer__main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .panel p {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+@media (min-width: 768px) {
+    .nav__right span {
+        display: block;
+    }
+
+    .nav__left-pc {
+        display: flex;
+        align-items: center;
+        gap: 1rem
+    }
+
+    #menu-icon {
+        display: none;
+    }
+
+    header h1 {
+        font-size: 3.5rem;
+    }
+
+    header p {
+        font-size: 1.75rem;
+    }
+
+
+    .mobile-menu,
+    .mobile-subMenu {
+        display: none;
+    }
+
+
+
+    .about-us {
+        flex-direction: row;
+    }
+
+    .about-us img {
+        flex-basis: 50%;
+        width: 50%;
+    }
+
+    .about-us div {
+        flex-basis: 50%;
+        width: 100%;
+    }
+
+    .ability__body {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .footer__main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .search-box__input {
+        width: 70%;
+    }
+
+
+}
+
+
+
+
+
+@media (min-width: 992px) {
+    .courses__wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .about-us img {
+        flex-basis: 40%;
+        width: 40%;
+    }
+
+    .about-us div {
+        flex-basis: 60%;
+        width: 100%;
+    }
+
+    .questions-box {
+        width: 800px;
+        margin: 0 auto 8rem;
+    }
+
+}
+
+
+
+@media (min-width: 1200px) {
+    .container {
+        width: 114rem;
+    }
+
+    .questions-box {
+        width: 1000px;
+        margin: 0 auto 8rem;
+    }
+
+    header h1 {
+        font-size: 5rem;
+    }
+
+    header p {
+        font-size: 2rem;
+    }
+
+    .search-box__input {
+        width: 900px;
+    }
+
+    #close {
+        left: 4rem;
+    }
+
+}
+
+@media (min-width: 1400px) {
+    .container {
+        width: 130rem;
+    }
+
+    header h1 {
+        font-size: 6rem;
+    }
+
+    header p {
+        font-size: 2.25rem;
+    }
+
+}
