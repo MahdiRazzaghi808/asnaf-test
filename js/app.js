@@ -38,14 +38,12 @@ up.addEventListener('click', () => {
 function updateImage() {
     const imageElement = document.querySelectorAll('#my-image');
     const windowWidth = window.innerWidth;
-
-
-    imageElement.forEach(v => {
+    imageElement.forEach((v, i) => {
         if (windowWidth <= 576) {
-            v.src = "./asset/asnaf.mob.jpg";
+            v.src = `./asset/header/asnaf.mob${i + 1}.jpg`;
             v.alt = "banner";
         } else {
-            v.src = "./asset/header.jpg";
+            v.src = `./asset/header/header${i + 1}.jpg`;
             v.alt = "banner";
         }
     })
