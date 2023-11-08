@@ -715,6 +715,10 @@ footer a {
     color: #010101 !important;
 }
 
+.swal2-popup {
+    font-size: 12px !important;
+}
+
 .os {
     padding: 0.5rem;
     border-radius: 0.25rem;
@@ -744,6 +748,31 @@ footer a {
 
 }
 
-.swal2-popup {
-    font-size: 12px !important;
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 100px;
+    background-color: #000000be;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
+    transition: all 0.25s linear;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 120%;
+    left: 50%;
+    margin-left: -50px;
+
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
