@@ -732,7 +732,7 @@ footer a {
     gap: 2rem;
 }
 
-.chose-city select{
+.chose-city select {
     width: 170px;
 }
 
@@ -742,4 +742,8 @@ footer a {
     align-items: center;
     gap: 0.75rem;
 
+}
+
+.swal2-popup {
+    font-size: 12px !important;
 }

@@ -166,7 +166,7 @@ showCourses.forEach(v => {
                     `<div class='chose-city'>
                     <div>
                         <label for="firstSelect">استان:</label>
-                        <select class="os" id="oss" onchange="myFunctionCity()" size='0'>
+                        <select class="os" id="oss" onchange="myFunctionCity()">
                         <option value="" disabled selected></option>
                             <option value="AzerbaijanEast">آذربايجان شرقي</option>
                             <option value="AzerbaijanWest">آذربايجان غربي</option>
