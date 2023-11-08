@@ -185,9 +185,9 @@ navbar {
 }
 
 .nav__more-data ul li:nth-child(2) {
-    padding: 1.5rem 0;
+    padding: 1.5rem 0 0;
     border-top: 1px solid #01010169;
-    border-bottom: 1px solid #01010169;
+    /* border-bottom: 1px solid #01010169; */
 }
 
 .nav__more-data ul img {
@@ -633,7 +633,7 @@ footer a {
     align-items: center;
 }
 
-.search-mobile{
+.search-mobile {
     color: #fff;
     padding: 0.5rem 1.5rem 2rem;
     border-bottom: 1px solid #eeeeee6e;
@@ -702,4 +702,15 @@ footer a {
 .swiper-button-next,
 .swiper-button-prev {
     z-index: 999;
+}
+
+.swal2-confirm:focus,
+.swal2-cancel:focus,
+.swal2-close:focus {
+  box-shadow: none !important;
+}
+
+.swal2-confirm {
+    background-color: #faf4f2 !important;
+    color: #010101 !important;
 }

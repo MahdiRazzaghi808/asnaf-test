@@ -140,3 +140,17 @@ var swiper = new Swiper(".mySwiper", {
     //   prevEl: ".swiper-button-prev",
     // },
 });
+
+
+
+const noCourses = document.querySelectorAll('#no-courses');
+noCourses.forEach(v => {
+    v.addEventListener('click', () => {
+        Swal.fire({
+            title: "دوره ها به زودی اضافه میشوند.",
+            icon: "info",
+            confirmButtonText: "تایید",
+        
+        });
+    })
+})
