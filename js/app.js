@@ -150,7 +150,88 @@ noCourses.forEach(v => {
             title: "دوره ها به زودی اضافه میشوند.",
             icon: "info",
             confirmButtonText: "تایید",
-        
+
         });
     })
 })
+const showCourses = document.querySelectorAll('#show-courses');
+showCourses.forEach(v => {
+    v.addEventListener('click', () => {
+        if (sessionStorage.getItem('key')) {
+            v.href = 'go'
+        } else {
+            Swal.fire({
+                title: 'شهر خود را انتخاب کنید...',
+                html:
+                    `<div class='chose-city'>
+                    <div>
+                        <label for="firstSelect">استان:</label>
+                        <select class="os" id="oss" onchange="myFunctionCity()" size='0'>
+                        <option value="" disabled selected></option>
+                            <option value="AzerbaijanEast">آذربايجان شرقي</option>
+                            <option value="AzerbaijanWest">آذربايجان غربي</option>
+                            <option value="Ardabil">اردبيل</option>
+                            <option value="Isfahan">اصفهان</option>
+                            <option value="Alborz">البرز</option>
+                            <option value="Ilam">ايلام</option>
+                            <option value="Bushire">بوشهر</option>
+                            <option value="Tehran">تهران</option>
+                            <option value="ChaharmahalAndBakhtiari">چهارمحال و بختياري</option>
+                            <option value="SouthKhorasan">خراسان جنوبي</option>
+                            <option value="RazaviKhorasan">خراسان رضوي</option>
+                            <option value="NorthKhorasan">خراسان شمالي</option>
+                            <option value="Khuzestan">خوزستان</option>
+                            <option value="Zanjan">زنجان</option>
+                            <option value="Semnan">سمنان</option>
+                            <option value="SistanAndBaluchestan">سيستان و بلوچستان</option>
+                            <option value="Fars">فارس</option>
+                            <option value="Qazvin">قزوين</option>
+                            <option value="Qom">قم</option>
+                            <option value="Kurdistan">كردستان</option>
+                            <option value="Kerman">كرمان</option>
+                            <option value="Kermanshah">كرمانشاه</option>
+                            <option value="KohgiluyehAndBoyerAhmad">كهگيلو بوير احمد</option>
+                            <option value="Golestan">گلستان</option>
+                            <option value="Gilan">گيلان</option>
+                            <option value="Lorestan">لرستان</option>
+                            <option value="Mazandaran">مازندران</option>
+                            <option value="Markazi">مركزي</option>
+                            <option value="Hormozgan">هرمزگان</option>
+                            <option value="Hamedan">همدان</option>
+                            <option value="Yazd">يزد</option>
+                        </select>
+                    </div>
+            
+                    <div>
+                        <label for="secondSelect" >شهر :</label>
+                        <select id="test" class='os'>
+                        </select>
+                    </div>
+                </div>
+                                        `
+                ,
+                showConfirmButton: true,
+                confirmButtonText: "تایید"
+            });
+        }
+
+
+
+    })
+})
+
+async function myFunctionCity() {
+    const test = document.querySelector('#test');
+    const os = document.querySelector('#oss');
+    const res = await fetch(`http://localhost:3000/emptyCities/${os.value}`);
+    const result = await res.json();
+    test.innerHTML = '';
+    let text = ''
+    result.forEach(element => {
+        text += `<option value="${element.id}">${element.city}</option>`
+    });
+    if (!result.length) {
+        text += `<option value="">شهری برای دوره یافت نشد</option>`
+    }
+    test.innerHTML = text
+}
