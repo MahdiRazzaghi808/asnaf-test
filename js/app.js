@@ -157,8 +157,8 @@ noCourses.forEach(v => {
 const showCourses = document.querySelectorAll('#show-courses');
 showCourses.forEach(v => {
     v.addEventListener('click', () => {
-        if (sessionStorage.getItem('key')) {
-            v.href = 'go'
+        if (sessionStorage.getItem('cityLink')) {
+            location.href = JSON.parse(sessionStorage.getItem('cityLink'))[v.dataset.name]
         } else {
             Swal.fire({
                 title: 'شهر خود را انتخاب کنید...',
@@ -204,7 +204,7 @@ showCourses.forEach(v => {
             
                     <div>
                         <label for="secondSelect" >شهر :</label>
-                        <select id="test" class='os'>
+                        <select id="city" class='os'>
                         </select>
                     </div>
                 </div>
@@ -212,7 +212,14 @@ showCourses.forEach(v => {
                 ,
                 showConfirmButton: true,
                 confirmButtonText: "تایید"
-            });
+            })
+                .then(res => {
+                    if (res.isConfirmed) {
+                        const oss = document.querySelector('#oss');
+                        const city = document.querySelector('#city');
+                        getCityInfo(oss.value, city.value)
+                    }
+                })
         }
 
 
@@ -221,11 +228,11 @@ showCourses.forEach(v => {
 })
 
 async function myFunctionCity() {
-    const test = document.querySelector('#test');
+    const city = document.querySelector('#city');
     const os = document.querySelector('#oss');
-    const res = await fetch(`http://localhost:3000/emptyCities/${os.value}`);
+    const res = await fetch(`https://asnaf-lms.iran.liara.run/emptyCities/${os.value}`);
     const result = await res.json();
-    test.innerHTML = '';
+    city.innerHTML = '';
     let text = ''
     result.forEach(element => {
         text += `<option value="${element.id}">${element.city}</option>`
@@ -233,5 +240,13 @@ async function myFunctionCity() {
     if (!result.length) {
         text += `<option value="">شهری برای دوره یافت نشد</option>`
     }
-    test.innerHTML = text
+    city.innerHTML = text
+}
+
+
+const getCityInfo = async (os, city) => {
+    const res = await fetch(`https://asnaf-lms.iran.liara.run/${os}/${city}`);
+    const result = await res.json();
+    sessionStorage.setItem("cityLink", JSON.stringify(result));
+
 }
